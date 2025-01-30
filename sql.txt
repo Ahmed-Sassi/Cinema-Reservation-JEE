@@ -1,0 +1,40 @@
+INSERT INTO FILMS (id, name) VALUES
+(1, 'Avatar'),
+(2, 'Barbie'),
+(3, 'Oppenheimer'),
+(4, 'Fast X'),
+(5, 'The Flash');
+
+
+INSERT INTO SALLES (id, name, capacity, adresse) VALUES
+(1, 'IMAX', 300, 'Cinema Megarama'),
+(2, 'VIP', 100, 'Cinema Megarama'),
+(3, 'Standard', 200, 'Cinema Megarama'),
+(4, '4DX', 150, 'Cinema Megarama'),
+(5, 'Premium', 120, 'Cinema Megarama');
+
+
+INSERT INTO SEANCES (id, datetime, places, tarif, film_id, salle_id) VALUES
+(1, '2025-01-12 10:00:00', 300, 60.00, 1, 1),  -- Avatar en IMAX
+(2, '2025-01-12 13:00:00', 100, 80.00, 2, 2),  -- Barbie en VIP
+(3, '2025-01-12 15:00:00', 200, 45.00, 3, 3),  -- Oppenheimer en Standard
+(4, '2025-01-12 18:00:00', 150, 70.00, 4, 4),  -- Fast X en 4DX
+(5, '2025-01-12 20:00:00', 120, 55.00, 5, 5),  -- The Flash en Premium
+(6, '2025-01-12 22:00:00', 300, 60.00, 1, 1);  -- Avatar en IMAX (séance du soir)
+
+
+INSERT INTO COMPTES (id, name, password, solde) VALUES
+(1, 'admin', 'admin123', 1000.00),
+(2, 'user1', 'user123', 500.00),
+(3, 'client1', 'client123', 200.00),
+(4, 'premium', 'premium123', 800.00),
+(5, 'test', 'test123', 300.00);
+
+
+INSERT INTO RESERVATIONS (id, seance_id, compte_id) VALUES
+(1, 1, 2),  -- user1 réserve Avatar IMAX 10h
+(2, 2, 3),  -- client1 réserve Barbie VIP 13h
+(3, 3, 4),  -- premium réserve Oppenheimer Standard 15h
+(4, 4, 2),  -- user1 réserve Fast X 4DX 18h
+(5, 5, 5);  -- test réserve The Flash Premium 20h
+
